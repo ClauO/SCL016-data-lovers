@@ -7,13 +7,16 @@ a:visited {
 }
 
 body {
-    cursor: url("./images/pika.gif"), auto;
+  background: url("../images/fondo.jpg") no-repeat fixed center center;
+  background-size: cover;
+  cursor: url("./images/pika.gif"), auto;
 
 }
 
 .first-page {
-    background-image: url("https://i.ibb.co/w4SbkWq/txJ7lD.jpg");
-    background-size: 100% 100%;
+
+    width: 100%;
+    height: 100%;
 }
 
 .logo-container {
@@ -30,9 +33,9 @@ body {
     background: rgba(4, 194, 0, 0.8);
     border-radius: 14px;
     border-width: 20px;
-    width: 80%;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    height: 450px;
     align-items: center;
     justify-content: flex-end;
     font-family: b612 mono;

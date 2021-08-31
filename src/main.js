@@ -1,8 +1,4 @@
-//import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-//import card from './card.js';
 
 const firstButton = () => {
     document.querySelector(".first-page").style.display = "none";
@@ -14,9 +10,7 @@ const kantoRegion = () => {
         document.querySelectorAll(".poke-image").forEach((element) =>{
             element.addEventListener("click", (event) =>{
                 const pokeCard = event.currentTarget.id; 
-                console.log(pokeCard);
                 const pokeInfo = data.pokemon.filter(info => info.name == pokeCard);
-                console.log(pokeInfo);
                 const kCard = document.querySelector(".page-container");
                 pokeInfo.map((data) => {
                     const {num, img, name, about, type} = data;
@@ -67,7 +61,6 @@ const kantoRegion = () => {
     }
 
     const pokemon = data.pokemon.filter(data => data.generation.name == "kanto");
-        console.log(pokemon);
     const containerK = document.querySelector(".kanto-results");
     pokemon.map((data) => {
         containerK.innerHTML += `
@@ -93,7 +86,6 @@ const kantoRegion = () => {
                         return 1;
                     return 0;
                 });
-            console.log(filterA);
             } else {
                 filterA = pokemon.map(data => data).sort((a, b) => {
                     if (a.name > b.name)
@@ -102,7 +94,6 @@ const kantoRegion = () => {
                         return 1;
                     return 0;
                 });
-            console.log(filterA);
             }
             const containerType = document.querySelector(".kanto-results");
             containerType.innerHTML = '';
@@ -131,10 +122,8 @@ const kantoRegion = () => {
     document.querySelectorAll(".fil-button").forEach( element => {
         element.addEventListener("click", event => {
             const type = event.currentTarget.id;
-            console.log(type)
             const pokemon = data.pokemon.filter(data => data.generation.name == "kanto");
             const poketype = pokemon.filter(pokeData => pokeData.type.includes(type));
-            console.log(poketype);
             const containerType = document.querySelector(".kanto-results");
             containerType.innerHTML = '';
             poketype.map(data => {
@@ -161,9 +150,7 @@ const johtoRegion = () => {
         document.querySelectorAll(".poke-image").forEach((element) => {
             element.addEventListener("click", (event) => {
                 const pokeCard = event.currentTarget.id; 
-                console.log(pokeCard);
                 const pokeInfo = data.pokemon.filter(info => info.name == pokeCard);
-                console.log(pokeInfo);
                 const jCard = document.querySelector(".page-container");
                 pokeInfo.map((data) => {
                     const {num, img, name, about, type} = data;
@@ -212,7 +199,6 @@ const johtoRegion = () => {
     }
 
     const pokemonJohto = data.pokemon.filter(data => data.generation.name == "johto");
-    console.log(pokemonJohto);
 
     const containerJ = document.querySelector(".johto-results");
     pokemonJohto.map((data) => {
@@ -239,7 +225,6 @@ const johtoRegion = () => {
                         return 1;
                     return 0;
                 });
-            console.log(filterA);
             }else {
                 filterA = pokemonJohto.map(data => data).sort((a, b) => {
                     if (a.name > b.name)
@@ -248,7 +233,6 @@ const johtoRegion = () => {
                         return 1;
                     return 0;
                 });
-            console.log(filterA);
             }
             const containerType = document.querySelector(".johto-results");
             containerType.innerHTML = '';
@@ -277,10 +261,9 @@ const johtoRegion = () => {
     document.querySelectorAll(".fil-button").forEach( element => {
         element.addEventListener("click", event => {
             const type = event.currentTarget.id;
-            console.log(type);
             const pokemon = data.pokemon.filter(data => data.generation.name == "johto");
             const poketype = pokemon.filter(pokeData => pokeData.type.includes(type));
-            console.log(poketype);
+
             const containerType = document.querySelector(".johto-results");
             containerType.innerHTML = '';
             poketype.map(data => {
